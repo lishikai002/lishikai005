@@ -1,0 +1,23 @@
+{
+  "name": "vuerouter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.17.0",
+    "css-loader": "*",
+    "style-loader": "*",
+    "url-loader": "*",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.3",
+    "vuex": "^3.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "*"
+  }
+}
