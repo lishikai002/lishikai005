@@ -6,6 +6,9 @@
            <router-link :to="{name:'college'}" class='filter-items' :tag="'li'">高校检索</router-link>
            <router-link :to="{name:'major'}"  class='filter-items' :tag="'li'">专业检索</router-link>
        </ul>
+       <!-- <keep-alive :include='overall'>
+           <router-view></router-view>
+       </keep-alive> -->
        <router-view></router-view>
    </div>
 </template>

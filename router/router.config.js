@@ -1,4 +1,6 @@
 import overall from '../src/pages/overall.vue'
+import college from '../src/pages/Colleges.vue'
+import major from '../src/pages/major.vue'
 var routers = [
     {
         path:'/',
@@ -12,16 +14,12 @@ var routers = [
     {
         name:'college',
         path:'/college',
-        component:{
-            template:'<h1>高校</h1>'
-        }
+        component:college
     },
     {
         name:'major',
         path:'/major',
-        component:{
-            template:'<h1>专业</h1>'
-        }
+        component:major
     }
 ]
 export default routers;

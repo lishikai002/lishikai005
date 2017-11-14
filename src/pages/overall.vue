@@ -158,4 +158,14 @@
 .sub{
     float:left;
 }
+.sub_title{
+    width:1200px;
+    border-bottom:solid 1px #ccc;
+    line-height:40px;
+    padding-left:10px;
+}
+.sub_resmind{
+    color:#ff0000;
+    font-size:12px;
+}
 </style>
