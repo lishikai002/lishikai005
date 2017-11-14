@@ -7,7 +7,9 @@ Vue.use(Vuex);
 let store = new Vuex.Store({
     state: {
         school_range_obj: [],
-        school_area_obj: []
+        school_area_obj: [],
+        Synthesis_search_a: [],
+        Synthesis_search_b: []
     },
     mutations: {
         update_school_range: function (state, list) {
@@ -73,6 +75,12 @@ let store = new Vuex.Store({
             state.school_area_obj.forEach((item,index)=>{
                 item.selected=(index==0)
             })
+        },
+        update_Synthesis_search:function(state,item){
+            state.Synthesis_search_a=item.slice(0,21);
+            console.log(state.Synthesis_search_a)
+            state.Synthesis_search_b=item.slice(21);
+           // console.log(state.Synthesis_search)
         }
     },
     getters: {

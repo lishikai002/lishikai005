@@ -1,5 +1,6 @@
 <template> 
-<div>  
+<div>
+        
     <table class='sub_table'>
         <thead class='sub_thead'>
             <tr >
@@ -10,7 +11,7 @@
             </tr>
         </thead>
         <tbody class='sub_tbody'>
-            <tr v-for="(item,index) in $store.state.Synthesis_search_a" :key='index'>
+            <tr v-for="(item,index) in $store.state.Synthesis_search_b" :key='index'>
                 <td>{{item.subject}}</td>
                 <td>{{item.collegesCount}}</td>
                 <td>{{item.majorCount}}</td>
@@ -23,7 +24,6 @@
 </template>
 <script>
 export default{
-  
 }
 </script>
 <style scoped>

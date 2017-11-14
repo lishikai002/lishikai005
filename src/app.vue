@@ -21,6 +21,7 @@
     .container{
         font-size:16px;
         width:1200px;
+        height: 100%;
         margin:0 auto;
 
     }

@@ -1,6 +1,10 @@
 import overall from '../src/pages/overall.vue'
 var routers = [
     {
+        path:'/',
+        redirect:'/overall'
+    },
+    {
         name:'overall',
         path:'/overall',
         component:overall

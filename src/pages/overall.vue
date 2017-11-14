@@ -12,7 +12,13 @@
                 <school-range :school-range-list="$store.state.school_range_obj"></school-range>
                 <school-area :school-area-list="$store.state.school_area_obj"></school-area>
             </div>
-            <subject-analysis></subject-analysis>
+             <p class='sub_title'><span >选考科目分析</span></p>
+             <p class='sub_resmind'>*由于2020年拟在京招生普通高校专业（类）选考科目范围尚未公布，暂时调用2018年拟在浙招生普通高校专业（类）选考科目范围，该数据仅供参考，正式文件公布后即时替换*！</p>
+            <subject-analysis class='sub'></subject-analysis>
+            <subject-table  class='sub'></subject-table>
+            <subject-wrap :table-title='table_title'> 
+                <subject-row v-for='(item,index) in table_row' :key='index' :datas='item'></subject-row>
+            </subject-wrap>
         </div>
 </template>
 <script>
@@ -20,6 +26,9 @@
     import school_range from '../../components/school_range.vue';
     import school_area from '../../components/school_area.vue';
     import subject_analysis from '../../components/Subject_analysis.vue';
+    import subject_analysis_b from '../../components/Subject_analysis_b.vue';
+    import subject_wrap from '../../components/Subject_wrap.vue';
+     import subject_row from '../../components/Subject_row.vue';
     import Vue from 'vue';
     import axios from 'axios';
     import Vuex from 'vuex';
@@ -34,7 +43,10 @@
         components:{
             "school-range":school_range,
             'school-area':school_area,
-            "subject-analysis":subject_analysis
+            "subject-analysis":subject_analysis,
+            "subject-table":subject_analysis_b,
+             "subject-wrap":subject_wrap,
+            "subject-row":subject_row
         },
          data:function(){
           return {
@@ -42,6 +54,8 @@
             //   selected_area_item:false,
             //   school_range_obj:[],
             //   school_area_obj:[]
+                 table_title:[],
+                 table_row:[]
           }
       },
    
@@ -60,6 +74,15 @@
             })
              vm.$store.commit('update_school_area',area_data)
            
+        }); 
+            this.$http.get('src/data/SynthesisSearch_school.json').then(function(res){
+            //  let school_data=  res.data.list.map((value,index)=>{
+            //     return index==0?{value:value,selected:true}:{value:value,selected:false}
+            // })
+             vm.$store.commit('update_Synthesis_search',res.data.result.analysisData)
+             vm.table_title=res.data.result.title;
+             vm.table_row=res.data.result.rows;
+           console.log(res.data.result.rows)
         }); 
         },
            computed:{
@@ -131,5 +154,8 @@
 .filter-item:hover{
     background:rgba(0,160,92,1);
     color:#fff;
+}
+.sub{
+    float:left;
 }
 </style>
